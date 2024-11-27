@@ -12,7 +12,7 @@ const App = () => {
   // Fetch todos from the server
   const fetchTodos = async () => {
     try {
-      const response = await axios.get(serverBaseUrl);
+      const response = await axios.get(serverBaseUrl + '/api/todos');
       setTodos(response.data);
     } catch (error) {
       console.error('Error fetching todos:', error);
@@ -43,7 +43,7 @@ const App = () => {
   const handleAddTodo = async () => {
     if (newTodo.trim()) {
       try {
-        const response = await axios.post(serverBaseUrl, { text: newTodo });
+        const response = await axios.post(serverBaseUrl + '/api/todos', { text: newTodo });
         setTodos([...todos, response.data]);
         setNewTodo('');
       } catch (error) {
@@ -55,7 +55,7 @@ const App = () => {
   // Delete a todo
   const handleDeleteTodo = async (id) => {
     try {
-      const deleteUrl = serverBaseUrl + `/${id}`;
+      const deleteUrl = serverBaseUrl + '/api/todos' + `/${id}`;
       await axios.delete(deleteUrl);
       setTodos(todos.filter(todo => todo.id !== id));
     } catch (error) {
@@ -66,7 +66,7 @@ const App = () => {
   // Toggle todo completion
   const handleToggleComplete = async (id) => {
     try {
-      const updateURL = serverBaseUrl + `/${id}`;
+      const updateURL = serverBaseUrl + '/api/todos' + `/${id}`;
       const updatedTodo = await axios.patch(updateURL);
       setTodos(todos.map(t => (t.id === id ? updatedTodo.data : t)));
     } catch (error) {

@@ -15,7 +15,7 @@ let todos = [];
 // Get all todos
 app.get('/api/todos', (req, res) => {
   res.json(todos);
-  console.log('request received from client: ' + req.host);
+  console.log('request received from client.');
 });
 
 // Create a new todo

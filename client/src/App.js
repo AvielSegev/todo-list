@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './App.css'; // Import the CSS file
 
 const App = () => {
   const [todos, setTodos] = useState([]);
@@ -48,7 +49,6 @@ const App = () => {
   // Toggle todo completion
   const handleToggleComplete = async (id) => {
     try {
-      const todo = todos.find(todo => todo.id === id);
       const updateURL = serverBaseUrl + `/${id}`;
       const updatedTodo = await axios.patch(updateURL);
       setTodos(todos.map(t => (t.id === id ? updatedTodo.data : t)));
@@ -58,26 +58,29 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h1>Todo List</h1>
-      <input 
-        type="text" 
-        value={newTodo} 
-        onChange={(e) => setNewTodo(e.target.value)} 
-        placeholder="Add new todo" 
-      />
-      <button onClick={handleAddTodo}>Add Todo</button>
+    <div className="app-container">
+      <h1 className="app-title">Todo List</h1>
+      <div className="input-container">
+        <input 
+          type="text" 
+          value={newTodo} 
+          onChange={(e) => setNewTodo(e.target.value)} 
+          placeholder="Add new todo" 
+          className="todo-input"
+        />
+        <button onClick={handleAddTodo} className="add-btn">Add</button>
+      </div>
 
-      <ul>
+      <ul className="todo-list">
         {todos.map(todo => (
-          <li key={todo.id}>
+          <li key={todo.id} className="todo-item">
             <span 
-              style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
+              className={`todo-text ${todo.completed ? 'completed' : ''}`} 
               onClick={() => handleToggleComplete(todo.id)}
             >
               {todo.text}
             </span>
-            <button onClick={() => handleDeleteTodo(todo.id)}>Delete</button>
+            <button onClick={() => handleDeleteTodo(todo.id)} className="delete-btn">Delete</button>
           </li>
         ))}
       </ul>

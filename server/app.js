@@ -4,7 +4,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const app = express();
-const port = 5000;
+const port = 80;
 
 // Middleware
 app.use(cors());
@@ -43,5 +43,5 @@ app.patch('/api/todos/:id', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+  console.log(`Server running at http://serverIP:${port}`);
 });

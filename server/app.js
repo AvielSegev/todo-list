@@ -43,5 +43,5 @@ app.patch('/api/todos/:id', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server running at http://serverIP:${port}`);
+  console.log(`Server running at http://{SERVER_IP}:${port}`);
 });

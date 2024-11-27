@@ -15,7 +15,7 @@ let todos = [];
 // Get all todos
 app.get('/api/todos', (req, res) => {
   res.json(todos);
-  console.log('request received from client' + req.hostname);
+  console.log('request received from client: ' + req.host);
 });
 
 // Create a new todo
@@ -46,5 +46,5 @@ app.patch('/api/todos/:id', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server running at http://{SERVER_IP}:${port}`);
+  console.log(`Server running at http://{REPLACE_WITH_SERVER_IP}:${port}`);
 });

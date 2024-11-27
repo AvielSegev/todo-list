@@ -1,3 +1,6 @@
+/* App.css */
+
+/* Basic Reset */
 * {
   margin: 0;
   padding: 0;
@@ -21,6 +24,50 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 400px;
   text-align: center;
+}
+
+/* Connection Section */
+.connection-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.server-input {
+  padding: 10px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.connect-btn {
+  padding: 10px 15px;
+  font-size: 1rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.connect-btn:hover {
+  background-color: #45a049;
+}
+
+.error-message {
+  color: #e60000;
+  margin-top: 10px;
+  font-size: 0.875rem;
+}
+
+/* Todo List Section */
+.todo-container {
+  margin-top: 20px;
 }
 
 .app-title {

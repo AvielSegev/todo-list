@@ -15,6 +15,7 @@ let todos = [];
 // Get all todos
 app.get('/api/todos', (req, res) => {
   res.json(todos);
+  console.log('request received from client' + req.hostname);
 });
 
 // Create a new todo
@@ -22,12 +23,14 @@ app.post('/api/todos', (req, res) => {
   const { text } = req.body;
   const newTodo = { id: Date.now(), text, completed: false };
   todos.push(newTodo);
+  console.log('new todo added:', newTodo);
   res.json(newTodo);
 });
 
 // Delete a todo
 app.delete('/api/todos/:id', (req, res) => {
   todos = todos.filter(todo => todo.id !== parseInt(req.params.id));
+  console.log('todo deleted:', req.params.id);
   res.json({ message: 'Todo deleted' });
 });
 

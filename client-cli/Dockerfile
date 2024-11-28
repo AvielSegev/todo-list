@@ -6,6 +6,9 @@ RUN apt-get update && apt-get install -y \
     python3 \
     python3-pip \
     python3-venv \
+    net-tools \
+    && apt install -y iputils-ping \
+    telnet \
     && apt-get clean 
 
 # Copy the client-cli code into the container

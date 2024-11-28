@@ -1,18 +1,21 @@
+# Start with the base Ubuntu image
 FROM ubuntu:22.04
 
-# Install dependencies
+# Install necessary system dependencies
 RUN apt-get update && apt-get install -y \
     python3 \
-    python3-pip
+    python3-pip \
+    python3-venv \
+    && apt-get clean 
 
-# Copy the client-cli code
+# Copy the client-cli code into the container
 COPY . /client
 
 # Set the working directory
 WORKDIR /client
 
-# Install the client-cli
-RUN pip3 install .
+# Install the Python client dependencies
+RUN pip3 install --no-cache-dir -r /client/requirements.txt
 
-# Run the client-cli
-CMD ["client.py"]
+# Set the default command to run the Python client
+CMD ["python3", "client.py"]

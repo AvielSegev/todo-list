@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { serverBaseUrl } from '../client/src/config.js';
+import { serverBaseUrl } from './config.js';
 
 // Fetch todos
 export const fetchTodos = async () => {

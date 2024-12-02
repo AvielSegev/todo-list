@@ -23,6 +23,7 @@ const App = () => {
     if (newTodo.trim()) {
       try {
         const todo = await addTodo(newTodo);
+        console.log('new todo is:', todo);
         setTodos([...todos, todo]);
         setNewTodo('');
       } catch (error) {
@@ -62,6 +63,9 @@ const App = () => {
         />
         <button onClick={handleAddTodo} className="add-btn">Add</button>
       </div>
+
+      {console.log(todos)}
+
 
       <ul className="todo-list">
         {todos.map(todo => (

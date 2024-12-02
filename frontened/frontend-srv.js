@@ -2,6 +2,8 @@
 import { fetchTodos, addTodo, deleteTodo, toggleComplete } from './frontend-srv-services.js';
 import express from 'express';
 import path from 'path';
+import cors from 'cors';
+import bodyParser from 'body-parser';
 
 import { fileURLToPath } from 'url';
 
@@ -13,6 +15,8 @@ const __dirname = path.dirname(__filename);
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'build')));
+app.use(bodyParser.json());
+app.use(cors());
 
 // Catch-all handler for other requests
 app.get('/', (req, res) => {
@@ -20,27 +24,27 @@ app.get('/', (req, res) => {
 });
 
 // Get all todos
-app.get('/all', (req, res) => {
-    const response = fetchTodos()
+app.get('/all', async (req, res) => {
+    const response = await fetchTodos()
     res.json(response);
 });
 
-// Create a new todo
-app.post('/newtodo', (req, res) => {
+// Create a nSew todo
+app.post('/newtodo', async (req, res) => {
     const { text } = req.body;
-    const response = addTodo(text)
+    const response = await addTodo(text)
     res.json(response);
 });
 
 // Delete a todo
-app.delete('/deletetodo/:id', (req, res) => {
-    const response = deleteTodo(req.params.id)
+app.delete('/deletetodo/:id', async (req, res) => {
+    const response = await deleteTodo(req.params.id)
     res.json(response);
 });
 
 // Toggle todo completion
-app.patch('/patchtodo/:id', (req, res) => {
-    const response = toggleComplete(req.params.id)
+app.patch('/patchtodo/:id', async (req, res) => {
+    const response = await toggleComplete(req.params.id)
     res.json(response);
 });
 

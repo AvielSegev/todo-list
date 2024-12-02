@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { serverBaseUrl } from './config';
+import { serverBaseUrl } from '../client/src/config.js';
 
 // Fetch todos
 export const fetchTodos = async () => {
@@ -15,7 +15,8 @@ export const addTodo = async (text) => {
 
 // Delete a todo
 export const deleteTodo = async (id) => {
-  await axios.delete(`${serverBaseUrl}/api/todos/${id}`);
+  const response = await axios.delete(`${serverBaseUrl}/api/todos/${id}`);
+  return response.data;
 };
 
 // Toggle completion status

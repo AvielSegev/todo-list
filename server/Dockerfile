@@ -16,4 +16,4 @@ RUN apt-get update && apt-get install -y \
 
 RUN npm install
 
-CMD ["node", "app.js"]
+CMD ["npm", "start"]

@@ -1,0 +1,20 @@
+{
+  "name": "frontened",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "frontend-srv.js",
+  "scripts": {
+    "start": "node frontend-srv.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.17.1",
+    "cors": "^2.8.5",
+    "body-parser": "^1.19.0",
+    "axios": "^1.7.8"
+  }
+
+}

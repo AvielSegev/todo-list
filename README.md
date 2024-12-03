@@ -24,13 +24,13 @@ The frontend displays the result to the user.
 
 ## Deployment Steps:
 
-### Clone the Repository:
+### 1. Clone the Repository:
 
 git clone <repository_url>
 
 cd <repository_name>
 
-### (Optional) Build Docker Images:
+### 2. (Optional) Build Docker Images:
 
 Build the images for the frontend and backend using the Dockerfiles located in the respective directories (frontend and server):
 
@@ -46,7 +46,7 @@ spec:
       containers:
         - image: <YOUR_IMAGE_NAME>
         
-### Apply Deployments and Services:
+### 3. Apply Deployments and Services:
 
 Navigate to each directory (frontend and server) and apply the Kubernetes manifests:
 
@@ -56,15 +56,7 @@ kubectl apply -f service.yaml
 
 This will create pods and services for both the backend and frontend. These components will communicate internally within the cluster.
 
-### View Logs:
-
-To check the logs of the running pods:
-
-kubectl logs pods/<server/client>-<TAB_TO_COMPLETE>
-
-Replace <server/client> with the respective pod name (e.g., server for the backend, client for the frontend).
-
-### Expose the Client-Service:
+### 4. Expose the Client-Service:
 
 For testing locally, use port forwarding
 
@@ -74,4 +66,12 @@ Visit the application in your browser:
 
 http://localhost:3000
 
-Happy Coding!
+### 5. View Logs:
+
+To check the logs of the running pods:
+
+kubectl logs pods/<server/client>-<TAB_TO_COMPLETE>
+
+Replace <server/client> with the respective pod name (e.g., server for the backend, client for the frontend).
+
+# Happy Coding!

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: server
-        image: quay.io/rh-ee-asegev/server:1.0.0
+        image: quay.io/rh-ee-asegev/server:3.0.0
         ports:
         - containerPort: 80  # Adjust to your server's listening port
         resources:

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: client
-        image: quay.io/rh-ee-asegev/client:2.0.0
+        image: quay.io/rh-ee-asegev/frontend:1.0.0
         ports:
         - containerPort: 3000
         resources:

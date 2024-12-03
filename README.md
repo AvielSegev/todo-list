@@ -32,6 +32,8 @@ cd <repository_name>
 
 ### 2. (Optional) Build Docker Images:
 
+Alternatively you can make use of my public images.
+
 Build the images for the frontend and backend using the Dockerfiles located in the respective directories (frontend and server):
 
 docker build -t <YOUR_IMAGE_NAME> ./frontend

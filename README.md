@@ -1,9 +1,10 @@
-# ToDo App
+# ToDo
 
 ## Overview:
 A simple and efficient ToDo application designed to help users manage tasks, set priorities, and track progress.
 
 **For updates and progress during the development of this project, please refer to the Wiki: [work progress](https://github.com/AvielSegev/todo-list/wiki/Work-Progress)**
+**Explainion of the different approaches: [work progress](https://github.com/AvielSegev/todo-list/wiki/Explain-of-the-two-approaches)**
 
 ## Instructions to Deploy on a Kubernetes Cluster:
 

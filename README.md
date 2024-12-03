@@ -26,6 +26,7 @@ The frontend displays the result to the user.
 Clone the Repository:
 
 git clone <repository_url>
+
 cd <repository_name>
 
 (Optional) Build Docker Images:
@@ -33,6 +34,7 @@ cd <repository_name>
 Build the images for the frontend and backend using the Dockerfiles located in the respective directories (frontend and server):
 
 docker build -t <YOUR_IMAGE_NAME> ./frontend
+
 docker build -t <YOUR_IMAGE_NAME> ./server
 
 Update the deployment.yaml files in both frontend and server directories to use your custom image name:
@@ -48,6 +50,7 @@ Apply Deployments and Services:
 Navigate to each directory (frontend and server) and apply the Kubernetes manifests:
 
 kubectl apply -f deployment.yaml
+
 kubectl apply -f service.yaml
 
 This will create pods and services for both the backend and frontend. These components will communicate internally within the cluster.
@@ -56,6 +59,7 @@ View Logs:
 To check the logs of the running pods:
 
 kubectl logs pods/<server/client>-<TAB_TO_COMPLETE>
+
 Replace <server/client> with the respective pod name (e.g., server for the backend, client for the frontend).
 
 Expose the Client-Service:
@@ -64,6 +68,7 @@ For testing locally, use port forwarding
 kubectl port-forward services/client-service 3000:3000
 
 Visit the application in your browser:
+
 http://localhost:3000ToDo App
 Overview
 A simple and efficient ToDo application designed to help users manage tasks, set priorities, and track progress.
@@ -93,11 +98,13 @@ cd <repository_name>
 (Optional) Build Docker Images
 
 Build the images for the frontend and backend using the Dockerfiles located in the respective directories (frontend and server):
-bash
-Copy code
+
 docker build -t <YOUR_IMAGE_NAME> ./frontend
+
 docker build -t <YOUR_IMAGE_NAME> ./server
+
 Update the deployment.yaml files in both frontend and server directories to use your custom image name:
+
 yaml
 Copy code
 spec:
@@ -108,26 +115,28 @@ spec:
 Apply Deployments and Services
 
 Navigate to each directory (frontend and server) and apply the Kubernetes manifests:
-bash
-Copy code
+
 kubectl apply -f deployment.yaml
+
 kubectl apply -f service.yaml
+
 This will create pods and services for both the backend and frontend. These components will communicate internally within the cluster.
+
 View Logs
 To check the logs of the running pods:
 
-bash
-Copy code
 kubectl logs pods/<server/client>-<TAB_TO_COMPLETE>
+
 Replace <server/client> with the respective pod name (e.g., server for the backend, client for the frontend).
 
 Expose the Client-Service
 
 For testing locally, use port forwarding:
-bash
-Copy code
+
 kubectl port-forward services/client-service 3000:3000
+
 Visit the application in your browser:
+
 http://localhost:3000
 
 

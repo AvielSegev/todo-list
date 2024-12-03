@@ -11,6 +11,7 @@ For updates and progress during the development of this project, please refer to
 In the root directory of the repository, you will find the following folders:
 
 frontend: Contains the source code for the frontend, including a Node.js server that serves a React application. The application is built and served on requests to /.
+
 server: Hosts the backend code, which manages the ToDo items. It responds to RESTful API calls.
 
 ### Workflow Overview:

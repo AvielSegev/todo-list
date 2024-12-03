@@ -27,6 +27,21 @@ The frontend displays the result to the user.
 
 ## Deployment Steps:
 
+## Using helm:
+
+run command: 'helm install todo ./deploy-todo/ '
+
+For testing locally, use port forwarding
+
+kubectl port-forward services/client-service 3000:3000
+
+Visit the application in your browser:
+
+http://localhost:3000
+
+
+## Long way:
+
 ### 1. Clone the Repository:
 
 git clone <repository_url>

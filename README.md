@@ -95,3 +95,6 @@ kubectl logs pods/<server/client>-<TAB_TO_COMPLETE>
 Replace <server/client> with the respective pod name (e.g., server for the backend, client for the frontend).
 
 # Happy Coding!
+
+
+BLABLA TEST
